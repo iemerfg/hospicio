@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'sistema_hospicio' %}">Voltar</a>
+      </nav>
+    
+    <h1>Pacientes</h1>
+    
+    <p>
+        <a href="{% url 'cadastrar_paciente' %}">Cadastrar</a>
+    </p>
+    <p>Listagem de Pacientes: </p>
+    {% for paciente in todos_pacientes %}
+    <div>
+        <p>Nome: {{ paciente.nome }}</p>
+        <p>Data de nascimento: {{ paciente.data_nasc }}</p>
+        <p>Sexo: {{ paciente.sexo }}</p>
+        <p>Relatório médico: {{ paciente.relatorio_medico }}</p>
+        <p>Tratamento: {{ paciente.tratamento }}</p>
+        <p>Naturalidade (Cidade/Estado/País): {{ paciente.naturalidade }}</p>
+        <p>CPF: {{ paciente.cpf }}</p>
+        <p>Tipo Sanguíneo: {{ paciente.tipo_sang }}</p>
+        {% if paciente.foto %}
+        <p><img src={{paciente.foto.url}}></p>
+        {% endif %}
+        <a href="{% url 'editar_paciente' paciente.id %}">EDITAR</a>
+        |
+        <a href="{% url 'remover_paciente' paciente.id %}">REMOVER</a>
+        <p>____________________________________________________________________</p>
+  
+    </div>
+    {% empty %}
+    <div>
+        <p>Não existem pacientes cadastrados</p>
+    </div>
+    {% endfor %}
+</body>
+</html>

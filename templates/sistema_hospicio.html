@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Central</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1"> Hospicio sla</span>
+      </nav>
+    <p><a href="{% url 'listar_pacientes' %}">Pacientes</a></p>
+    <p><a href="{% url 'listar_medicos' %}">Médicos</a></p>
+    <p><a href="{% url 'listar_fornecedores' %}">Fornecedores</a></p>
+</body>
+</html>

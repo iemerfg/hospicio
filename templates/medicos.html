@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Médicos</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'sistema_hospicio' %}">Voltar</a>
+      </nav>
+      
+    <h1>Médicos</h1>
+    <p>
+        <a href="{% url 'cadastrar_medico' %}">Cadastrar</a>
+    </p>
+    <p>Listagem de Médicos: </p>
+
+    {% for medico in todos_medicos %}
+    <div>
+        <p>Nome: {{ medico.nome }}</p>
+        <p>Data de nascimento: {{ medico.data_nasc }}</p>
+        <p>Sexo: {{ medico.sexo }}</p>
+        <p>Especialidade: {{ medico.especialidade }}</p>
+        <p>Naturalidade (Cidade/Estado/País): {{ medico.naturalidade }}</p>
+        <p>CPF: {{ medico.cpf }}</p>
+        <p>Tipo Sanguíneo: {{ medico.tipo_sang }}</p>
+        {% if medico.foto %}
+        <p><img src={{medico.foto.url}}></p>
+        {% endif %}
+        <a href="{% url 'editar_medico' medico.id %}">EDITAR</a>
+        |
+        <a href="{% url 'remover_medico' medico.id %}">REMOVER</a>
+        <p>____________________________________________________________________</p>
+  
+    </div>
+    {% empty %}
+    <div>
+        <p>Não existem medicos cadastrados</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
