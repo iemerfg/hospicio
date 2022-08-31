@@ -5,35 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pacientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        div{
+            text-align: center;
+            padding-bottom: 10px;
+            justify-content: center;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        .botões{
+            margin: 10px;
+            
+        }
+        .texto{
+            text-align: center;
+            text-decoration: underline;
+        }
+        body{
+            background-color: lightcyan;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'sistema_hospicio' %}">Voltar</a>
+        <a class="btn btn-primary btn-lg botões" href="{% url 'sistema_hospicio' %}" role="button">voltar</a>
+        
       </nav>
     
     <h1>Pacientes</h1>
     
     <p>
-        <a href="{% url 'cadastrar_paciente' %}">Cadastrar</a>
+        <a class="btn btn-primary botões" href="{% url 'cadastrar_paciente' %}" role="button">Cadastro</a>
     </p>
-    <p>Listagem de Pacientes: </p>
+    <p class="texto">Listagem de Pacientes: </p>
     {% for paciente in todos_pacientes %}
-    <div>
-        <p>Nome: {{ paciente.nome }}</p>
-        <p>Data de nascimento: {{ paciente.data_nasc }}</p>
-        <p>Sexo: {{ paciente.sexo }}</p>
-        <p>Relatório médico: {{ paciente.relatorio_medico }}</p>
-        <p>Tratamento: {{ paciente.tratamento }}</p>
-        <p>Naturalidade (Cidade/Estado/País): {{ paciente.naturalidade }}</p>
-        <p>CPF: {{ paciente.cpf }}</p>
-        <p>Tipo Sanguíneo: {{ paciente.tipo_sang }}</p>
-        {% if paciente.foto %}
-        <p><img src={{paciente.foto.url}}></p>
-        {% endif %}
-        <a href="{% url 'editar_paciente' paciente.id %}">EDITAR</a>
-        |
-        <a href="{% url 'remover_paciente' paciente.id %}">REMOVER</a>
-        <p>____________________________________________________________________</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body ">
+                    {% if paciente.foto %}
+                    <p><img src={{paciente.foto.url}} width="200px"></p>
+                    {% endif %}
+                    <p>Nome: {{ paciente.nome }}</p>
+                    <p>Data de nascimento: {{ paciente.data_nasc }}</p>
+                    <p>Sexo: {{ paciente.sexo }}</p>
+                    <p>Relatório médico: {{ paciente.relatorio_medico }}</p>
+                    <p>Tratamento: {{ paciente.tratamento }}</p>
+                    <p>Naturalidade (Cidade/Estado/País): {{ paciente.naturalidade }}</p>
+                    <p>CPF: {{ paciente.cpf }}</p>
+                    <p>Tipo Sanguíneo: {{ paciente.tipo_sang }}</p>
+                    <a class="btn btn-primary" href="{% url 'editar_paciente' paciente.id %}" role="button">EDITAR</a>
+                    |
+                    <a class="btn btn-primary" href="{% url 'remover_paciente' paciente.id %}" role="button">REMOVER</a>
+                </div>
+            </div>
+          </div>
   
     </div>
     {% empty %}
