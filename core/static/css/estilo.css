@@ -36,3 +36,27 @@ nav{
     justify-content: center;
     border: 5px double;
 }
+
+.arara{
+    background-color: lightcyan;
+}
+
+.dives{
+    text-align: center;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+.bordas{
+    border: 5px double;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.logo{
+    text-decoration: underline;
+}
+
+.branco{
+    background-color: white;
+}
