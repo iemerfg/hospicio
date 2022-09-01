@@ -13,27 +13,51 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <a class="btn btn-primary btn-lg botões" href="{% url 'listar_pacientes' %}" role="button">voltar</a>
+            <a class="btn btn-primary btn-lg botoes" href="{% url 'listar_pacientes' %}" role="button">voltar</a>
             <span class="navbar-brand mb-0 h1 logo">Hospital Psiquiatrico Evergreen</span>
           </div>
       </nav>
-    <h1>Cadastro de Paciente</h1>
-
+      <h1>Cadastro de Paciente</h1>
+      <div class="row">
+        <div class="col-sm-4">
+            <div class="card ">
+                <div class="card-body cartao">
     <form method="post" enctype="multipart/form-data" accept=".png, .jpg">
         {% csrf_token %}
+        <p>{{ form_paciente.nome.label}} </p>
+        <p>{{ form_paciente.nome |add_class:"forma"}}</p>
 
-        <p>{{ form_paciente.nome.label }}: {{ form_paciente.nome |add_class:"forma"}}</p>
-        <p>{{ form_paciente.data_nasc.label }}: {{ form_paciente.data_nasc |add_class:"forma"}}</p>
-        <p>{{ form_paciente.sexo.label }}: {{ form_paciente.sexo |add_class:"forma"}}</p>
-        <p>{{ form_paciente.relatorio_medico.label }}: {{ form_paciente.relatorio_medico |add_class:"forma"}}</p>
-        <p>{{ form_paciente.tratamento.label }}: {{ form_paciente.tratamento |add_class:"forma"}}</p>
-        <p>{{ form_paciente.naturalidade.label }}: {{ form_paciente.naturalidade |add_class:"forma"}}</p>
-        <p>{{ form_paciente.cpf.label }}: {{ form_paciente.cpf |add_class:"forma"}}</p>
-        <p>{{ form_paciente.tipo_sang.label }}: {{ form_paciente.tipo_sang |add_class:"forma"}}</p>
-        <p>{{ form_paciente.foto.label }}: {{ form_paciente.foto |add_class:"forma"}}</p>
+        <p>{{ form_paciente.data_nasc.label}} </p>
+        <p>{{ form_paciente.data_nasc |add_class:"forma"}}</p>
+
+        <p>{{ form_paciente.sexo.label}} </p>
+        <p>{{ form_paciente.sexo |add_class:"forma"}}</p>
+
+        <p>{{ form_paciente.relatorio_medico.label}} </p>
+        <p>{{ form_paciente.relatorio_medico |add_class:"forma"}}</p>
+
+        <p>{{ form_paciente.tratamento.label}} </p>
+        <p>{{ form_paciente.tratamento |add_class:"forma"}}</p>
+
+        <p>{{ form_paciente.naturalidade.label}} </p>
+        <p>{{ form_paciente.naturalidade |add_class:"forma"}}</p>
+
+        <p>{{ form_paciente.cpf.label}} </p>
+        <p>{{ form_paciente.cpf |add_class:"forma"}}</p>
+
+        <p>{{ form_paciente.tipo_sang.label}} </p>
+        <p>{{ form_paciente.tipo_sang |add_class:"forma"}}</p>
+
+        <p>{{ form_paciente.foto.label}} </p>
+        <p>{{ form_paciente.foto |add_class:"forma"}}</p>
+
         <p>
             <input type="submit" value="Cadastrar">
         </p>
     </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -16,7 +16,7 @@
             text-align: center;
             text-decoration: underline;
         }
-        .botões{
+        .botoes{
             margin: 10px;
             
         }
@@ -35,7 +35,7 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <a class="btn btn-primary btn-lg botões" href="{% url 'sistema_hospicio' %}" role="button">voltar</a>
+            <a class="btn btn-primary btn-lg botoes" href="{% url 'sistema_hospicio' %}" role="button">voltar</a>
             <span class="navbar-brand mb-0 h1 logo">Hospital Psiquiatrico Evergreen</span>
           </div>
       </nav>
@@ -51,15 +51,15 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body ">
-        <p>Nome: {{ fornecedor.nome }}</p>
-        <p>Produtos: {{ fornecedor.produtos }}</p>
-        <p>CNPJ: {{ fornecedor.cnpj }}</p>
-        <p>Localidade: {{ fornecedor.localidade }}</p>
+                <p>Nome: {{ fornecedor.nome }}</p>
+                <p>Produtos: {{ fornecedor.produtos }}</p>
+                <p>CNPJ: {{ fornecedor.cnpj }}</p>
+                <p>Localidade: {{ fornecedor.localidade }}</p>
 
-        <a href="{% url 'editar_fornecedor' fornecedor.id %}">EDITAR</a>
-        |
-        <a href="{% url 'remover_fornecedor' fornecedor.id %}">REMOVER</a>
-        <p>____________________________________________________________________</p>
+                <a href="{% url 'editar_fornecedor' fornecedor.id %}">EDITAR</a>
+                |
+                <a href="{% url 'remover_fornecedor' fornecedor.id %}">REMOVER</a>
+                <p>____________________________________________________________________</p>
   
                 </div>
             </div>

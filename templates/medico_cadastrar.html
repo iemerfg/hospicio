@@ -19,20 +19,43 @@
       </nav>
     <h1>Cadastro de Médico</h1>
 
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card ">
+                <div class="card-body cartao">
     <form method="post" enctype="multipart/form-data" accept=".png, .jpg">
         {% csrf_token %}
+        <p>{{ form_medico.nome.label}} </p>
+        <p>{{ form_medico.nome |add_class:"forma"}}</p>
 
-        <p>{{ form_medico.nome.label }}: {{ form_medico.nome |add_class:"forma"}}</p>
-        <p>{{ form_medico.data_nasc.label }}: {{ form_medico.data_nasc |add_class:"forma"}}</p>
-        <p>{{ form_medico.sexo.label }}: {{ form_medico.sexo |add_class:"forma"}}</p>
-        <p>{{ form_medico.especialidade.label }}: {{ form_medico.especialidade |add_class:"forma"}}</p>
-        <p>{{ form_medico.naturalidade.label }}: {{ form_medico.naturalidade |add_class:"forma"}}</p>
-        <p>{{ form_medico.cpf.label }}: {{ form_medico.cpf |add_class:"forma"}}</p>
-        <p>{{ form_medico.tipo_sang.label }}: {{ form_medico.tipo_sang |add_class:"forma"}}</p>
-        <p>{{ form_medico.foto.label }}: {{ form_medico.foto |add_class:"forma"}}</p>
+        <p>{{ form_medico.data_nasc.label}} </p>
+        <p>{{ form_medico.data_nasc |add_class:"forma"}}</p>
+
+        <p>{{ form_medico.sexo.label}} </p>
+        <p>{{ form_medico.sexo |add_class:"forma"}}</p>
+
+        <p>{{ form_medico.especialidade.label}} </p>
+        <p>{{ form_medico.especialidade |add_class:"forma"}}</p>
+
+        <p>{{ form_medico.naturalidade.label}} </p>
+        <p>{{ form_medico.naturalidade |add_class:"forma"}}</p>
+
+        <p>{{ form_medico.cpf.label}} </p>
+        <p>{{ form_medico.cpf |add_class:"forma"}}</p>
+
+        <p>{{ form_medico.tipo_sang.label}} </p>
+        <p>{{ form_medico.tipo_sang |add_class:"forma"}}</p>
+
+        <p>{{ form_medico.foto.label}} </p>
+        <p>{{ form_medico.foto |add_class:"forma"}}</p>
+
         <p>
             <input type="submit" value="Cadastrar">
         </p>
     </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

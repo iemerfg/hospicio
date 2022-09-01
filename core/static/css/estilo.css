@@ -1,5 +1,6 @@
 .forma{
     border-radius: 5px;
+    padding-left: 100px;
 }
 
 div{
@@ -10,8 +11,9 @@ div{
 h1{
     text-align: center;
     text-decoration: underline;
+    padding-bottom: 10px;
 }
-.botões{
+.botoes{
     margin: 10px;
     
 }
@@ -24,4 +26,13 @@ body{
 }
 nav{
     background-color: silver;
+}
+
+.formaNome{
+    text-decoration: underline;
+    text-align: center;
+}
+.cartao{
+    justify-content: center;
+    border: 5px double;
 }
