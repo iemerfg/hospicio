@@ -12,7 +12,16 @@
 
     <form method="post" enctype="multipart/form-data" accept=".png, .jpg">
         {% csrf_token %}
-        {{ form_paciente }}
+
+        <p>{{ form_paciente.nome.label }}: {{ form_paciente.nome }}</p>
+        <p>{{ form_paciente.data_nasc.label }}: {{ form_paciente.data_nasc }}</p>
+        <p>{{ form_paciente.sexo.label }}: {{ form_paciente.sexo }}</p>
+        <p>{{ form_paciente.relatorio_medico.label }}: {{ form_paciente.relatorio_medico }}</p>
+        <p>{{ form_paciente.tratamento.label }}: {{ form_paciente.tratamento }}</p>
+        <p>{{ form_paciente.naturalidade.label }}: {{ form_paciente.naturalidade }}</p>
+        <p>{{ form_paciente.cpf.label }}: {{ form_paciente.cpf }}</p>
+        <p>{{ form_paciente.tipo_sang.label }}: {{ form_paciente.tipo_sang }}</p>
+        <p>{{ form_paciente.foto.label }}: {{ form_paciente.foto }}</p>
         <p>
             <input type="submit" value="Cadastrar">
         </p>

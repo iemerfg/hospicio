@@ -12,7 +12,11 @@
 
     <form method="post" enctype="multipart/form-data" accept=".png, .jpg">
         {% csrf_token %}
-        {{ form_fornecedor }}
+
+        <p>{{ form_fornecedor.nome.label }}: {{ form_fornecedor.nome }}</p>
+        <p>{{ form_fornecedor.produtos.label }}: {{ form_fornecedor.produtos }}</p>
+        <p>{{ form_fornecedor.cnpj.label }}: {{ form_fornecedor.cnpj }}</p>
+        <p>{{ form_fornecedor.localidade.label }}: {{ form_fornecedor.localidade }}</p>
         <p>
             <input type="submit" value="Cadastrar">
         </p>
